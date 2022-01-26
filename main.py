@@ -1,4 +1,5 @@
 import requests
+import os
 from bs4 import BeautifulSoup
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
@@ -7,7 +8,7 @@ from spotipy.oauth2 import SpotifyOAuth
 data = input("Which year do you want to travel to? Type the date in this format: YYYY-MM-DD:")
 URL = f"https://www.billboard.com/charts/hot-100/{data}"
 SPOTIFY_ID = "450a8442dfd44e4cb55f2adc8d42f150"
-SPOTIFY_SECRET = "5a4b467e706c419ca6af5194320c50b3"
+SPOTIFY_SECRET = os.environ['SPOTIFY_TOKEN']
 
 
 response = requests.get(URL)
